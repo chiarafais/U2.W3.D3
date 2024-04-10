@@ -29,7 +29,14 @@ const fetchCharacters = () => {
       const row = document.getElementById("libraries-row");
       libraryData.forEach((char) => {
         const col = document.createElement("col");
-        col.classList.add("col-md-3", "col-12", "col-sm-6", "col-lg-2", "mb-3");
+        col.classList.add(
+          "col-md-3",
+          "col-12",
+          "col-sm-6",
+          "col-lg-3",
+          "col-xl-2",
+          "mb-3"
+        );
         const card = document.createElement("div");
         card.classList.add("card");
 

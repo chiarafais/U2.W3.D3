@@ -1,4 +1,14 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+h1 {
+  font-size: 3em;
+}
+h5 {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+p {
+  font-size: 1.2em;
+}
 img {
   object-fit: cover;
   height: 200px;
@@ -8,4 +18,5 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
