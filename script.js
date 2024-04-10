@@ -25,18 +25,8 @@ const fetchCharacters = () => {
       }
     })
     .then((libraryData) => {
-      // qui dentro possiamo avere l'assoluta certezza di essere sincronizzati con l'arrivo del dato,
-      // perché questo .then() scatterà solo dopo la risoluzione del .json() precedente
-
-      // a questo punto possiamo usare il dato contenuto nel parametro (in questo caso chiamato disneyData) come ci pare!
-
-      // es. DOM MANIPULATION!
-      console.log(libraryData); // oggetto intero
-      // array interno all'oggetto
-
+      console.log(libraryData);
       const row = document.getElementById("libraries-row");
-
-      // utilizziamo il dato come di consueto, è un semplice array a questo punto che possiamo ciclare per generare elementi nel DOM
       libraryData.forEach((char) => {
         const col = document.createElement("col");
         col.classList.add("col-md-3", "col-12", "col-sm-6", "col-lg-2", "mb-3");
@@ -75,9 +65,15 @@ const fetchCharacters = () => {
         buttonAdd.addEventListener("click", function () {
           const titleCart = document.createElement("li");
           titleCart.classList.add("titleList");
-
           titleCart.innerText = char.title + " - € " + char.price;
 
+          const btnRemoveCart = document.createElement("button");
+          btnRemoveCart.classList.add("btn", "btn-primary");
+          btnRemoveCart.innerHTML = '<i class="bi bi-trash3-fill"></i>';
+          btnRemoveCart.addEventListener("click", function () {
+            titleCart.remove();
+          });
+          titleCart.appendChild(btnRemoveCart);
           cartUl.appendChild(titleCart);
         });
 
