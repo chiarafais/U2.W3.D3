@@ -56,7 +56,7 @@ const fetchCharacters = () => {
         p.innerText = "€ " + char.price;
 
         const button = document.createElement("button");
-        button.classList.add("btn", "btn-primary");
+        button.classList.add("btn", "btn-danger");
 
         button.innerHTML = "SCARTA " + '<i class="bi bi-trash3-fill"></i>';
 
@@ -75,7 +75,7 @@ const fetchCharacters = () => {
           titleCart.innerText = char.title + " - € " + char.price;
 
           const btnRemoveCart = document.createElement("button");
-          btnRemoveCart.classList.add("btn", "btn-primary");
+          btnRemoveCart.classList.add("btn", "btn-danger", "btnRemoveCart");
           btnRemoveCart.innerHTML = '<i class="bi bi-trash3-fill"></i>';
           btnRemoveCart.addEventListener("click", function () {
             titleCart.remove();
