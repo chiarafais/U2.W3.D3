@@ -1,0 +1,10 @@
+img {
+  object-fit: cover;
+  height: 200px;
+}
+.card-body {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
