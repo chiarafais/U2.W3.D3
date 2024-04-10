@@ -56,14 +56,29 @@ const fetchCharacters = () => {
 
         const p = document.createElement("p");
         p.classList.add("card-text", "card-price");
-        p.innerText = char.price;
+        p.innerText = "€ " + char.price;
 
         const button = document.createElement("button");
         button.classList.add("btn", "btn-primary");
-        button.innerText = "SCARTA";
+
+        button.innerHTML = "SCARTA " + '<i class="bi bi-trash3-fill"></i>';
+
+        const buttonAdd = document.createElement("button");
+        buttonAdd.classList.add("btn", "btn-primary");
+        buttonAdd.innerHTML = "AGGIUNGI " + '<i class="bi bi-cart-plus"></i>';
 
         button.addEventListener("click", function () {
           col.remove();
+        });
+
+        let cartUl = document.querySelector("ul");
+        buttonAdd.addEventListener("click", function () {
+          const titleCart = document.createElement("li");
+          titleCart.classList.add("titleList");
+
+          titleCart.innerText = char.title + " - € " + char.price;
+
+          cartUl.appendChild(titleCart);
         });
 
         col.appendChild(card);
@@ -72,6 +87,7 @@ const fetchCharacters = () => {
         cardBody.appendChild(h5);
         cardBody.appendChild(p);
         cardBody.appendChild(button);
+        cardBody.appendChild(buttonAdd);
         row.appendChild(col);
       });
     })
